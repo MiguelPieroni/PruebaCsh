@@ -7,60 +7,61 @@
 
 body {
     font-family: Arial, sans-serif;
+    min-width: 320px;
 }
 
 /* Barra superior */
 .top-banner {
     background: #545454;
     height: 60px;
-    padding-left: 20px;
+    width: 100%;
 }
 
 .flex-row-content {
-    max-width: 1700px;
+    width: 100%;
     margin: 0 auto;
-    padding: 0 0;
+    height: 100%;
     display: flex;
     align-items: center;
+    padding: 0 100px;
 }
 
 .logos-section {
-    width: 25%;
+    width: 300px;
 }
 
 .brand-logos {
     display: flex;
     align-items: center;
-    gap: 15px; /* Espaciado más generoso entre botones */
+    gap: 20px;
     padding: 7px 0;
 }
 
 .logo-link {
     background-color: #7979797c;
-    border-radius: 10px; /* Bordes más redondeados */
-    padding: 8px 20px; /* Tamaño más grande para mejor apariencia */
+    border-radius: 10px;
+    padding: 8px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #fff; /* Texto blanco para contraste */
-    font-size: 14px; /* Tamaño de texto más legible */
-    font-weight: bold; /* Texto más destacado */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil para efecto flotante */
-    transition: all 0.5s ease; /* Transiciones suaves */
-    text-transform: uppercase; /* Texto en mayúsculas */
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
 }
 
 .logo-link:hover {
-    background-color: #000000; /* Cambio de color al hover */
-    color: #333; /* Contraste de texto al hover */
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
-    transform: translateY(-4px); /* Efecto de elevación */
+    background-color: #000000;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
 }
 
 .logo-exit,
 .logo-seven {
     max-height: 30px;
-    max-width: 100%;
+    width: auto;
     object-fit: contain;
 }
 
@@ -68,36 +69,36 @@ body {
 .main-header {
     background: white;
     border-bottom: 1px solid #f0f0f0;
+    width: 100%;
 }
 
 .header-container {
-    max-width: 1800px;
+    width: 100%;
     margin: 0 auto;
-    padding: 0 0;
     height: 90px;
+    display: flex;
+    align-items: center;
+    padding: 0 100px;
+}
+
+.logo-container {
+    width: 300px;
     display: flex;
     align-items: center;
 }
 
-.logo-container {
-    padding: 10px;
-    width: 15%;
-    transform-origin: left;
-}
-
 .logo-image {
-    width: 100%;
-    max-width: 100%;
-    padding: 10px 10px;
+    width: 200px;
     height: auto;
-    transform-origin: left;
+    padding: 10px 0;
 }
 
 /* Barra de búsqueda */
 .search-container {
-    width: 50%;
+    flex: 1;
     display: flex;
-    justify-content: right;
+    justify-content: center;
+    padding: 0 40px;
 }
 
 .search-wrapper {
@@ -111,16 +112,16 @@ body {
     border: 1px solid #e5e5e5;
     border-radius: 5px;
     background: #f7f7f7;
-    height: 42px;
+    height: 40px;
 }
 
 .search-input {
-    width: 40%;
-    flex: 1;
+    width: 100%;
     border: none;
     background: none;
-    padding: 10px 20px;
+    padding: 8px 15px;
     font-size: 14px;
+    outline: none;
 }
 
 .search-button {
@@ -128,6 +129,8 @@ body {
     border: none;
     padding: 0 15px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
 }
 
 .search-button img {
@@ -137,7 +140,7 @@ body {
 
 /* Acciones de usuario */
 .user-actions {
-    width: 30%;
+    width: 300px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -179,11 +182,13 @@ body {
 .main-nav {
     background: white;
     border-bottom: 1px solid #f0f0f0;
+    width: 100%;
 }
 
 .nav-container {
-    max-width: 1440px;
+    width: 100%;
     margin: 0 auto;
+    padding: 0 100px;
 }
 
 .menu-list {
@@ -204,10 +209,11 @@ body {
     font-size: 14px;
     font-weight: bold;
     padding: 10px;
-    position: relative; /* Necesario para pseudo-elementos */
-    overflow: hidden; /* Evita que el efecto sobresalga */
-    z-index: 1; /* Asegura que el texto esté encima del efecto */
-    transition: color 0.5s ease; /* Transición para el texto */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: color 0.3s ease;
+    white-space: nowrap;
 }
 
 .menu-list a::after {
@@ -218,55 +224,62 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #8b8b8b; /* Color del fondo al hacer hover */
-    transform: scaleX(0) scaleY(0); /* Comienza comprimido desde la esquina */
-    transform-origin: bottom left; /* Punto de inicio en la esquina inferior izquierda */
-    transition: transform 0.4s ease; /* Efecto suave de expansión */
-    z-index: -1; /* Coloca el fondo detrás del texto */
+    background-color: #8b8b8b;
+    transform: scaleX(0) scaleY(0);
+    transform-origin: bottom left;
+    transition: transform 0.3s ease;
+    z-index: -1;
+}
+
+.menu-list .sale a::after {
+    background-color: #ff0000;
 }
 
 .menu-list a:hover::after {
-    transform: scaleX(1) scaleY(1); /* Expande completamente el fondo */
+    transform: scaleX(1) scaleY(1);
 }
 
 .menu-list a:hover {
-    color: #fff; /* Cambia el color del texto al pasar el mouse */
+    color: #fff;
 }
 
 .menu-list .sale a {
-    color: red;
+    color: rgb(255, 0, 0);
 }
+
+.menu-list .sale:hover a {
+    color: #ffffff;
+}
+
 /* Banners bancarios */
 .bank-promos {
     background: #f7f7f7;
-    padding: 0 0;
+    width: 100%;
 }
 
 .promos-container {
-    max-width: 100%;
+    width: 100%;
     margin: 0 auto;
-    padding: 0 0;
     display: flex;
     justify-content: center;
-    gap: 0;
 }
 
 .promos-container img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
+    display: block;
 }
 
 /* Banner principal */
 .main-banner {
-    max-width: 100%;
-    max-height: 600px;
+    width: 100%;
     margin: 0 auto;
-    padding: 0 0;
 }
 
 .main-banner img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
+    display: block;
 }
 
 /* Elementos flotantes */
@@ -296,22 +309,44 @@ body {
     height: 50px;
 }
 
-/* Media queries */
-@media (min-width: 1200px) {
-    /* Estilos específicos para pantallas de escritorio */
-}
-
-@media (min-width: 768px) and (max-width: 1199px) {
-    /* Estilos específicos para pantallas de tableta */
-    .header-container,
+/* Media queries para pantallas grandes y medianas */
+@media (min-width: 1200px) and (max-width: 1600px) {
     .flex-row-content,
-    .promos-container {
-        padding: 0 20px;
+    .header-container,
+    .nav-container {
+        padding: 0 80px;
     }
 }
 
+@media (min-width: 992px) and (max-width: 1199px) {
+    .flex-row-content,
+    .header-container,
+    .nav-container {
+        padding: 0 60px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .flex-row-content,
+    .header-container,
+    .nav-container {
+        padding: 0 40px;
+    }
+}
+
+/* Media queries para móviles */
 @media (max-width: 767px) {
-    /* Estilos específicos para pantallas de móvil */
+    .flex-row-content,
+    .header-container,
+    .nav-container {
+        padding: 0 20px;
+    }
+
+    .logo-container,
+    .user-actions {
+        width: auto;
+    }
+
     .account-label {
         display: none;
     }
@@ -320,5 +355,13 @@ body {
         padding: 10px;
         gap: 20px;
         flex-wrap: wrap;
+    }
+
+    .search-container {
+        padding: 0 10px;
+    }
+
+    .user-actions {
+        gap: 15px;
     }
 }
