@@ -71,6 +71,24 @@ body {
     width: 100%;
 }
 
+/* Botón hamburguesa */
+.hamburger-menu {
+    display: none;  /* Oculto en desktop */
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #000;
+    margin: 5px 0;
+    border-radius: 3px;
+}
+
 .header-container {
     width: 100%;
     margin: 0 auto;
@@ -84,7 +102,7 @@ body {
     width: 300px;
     display: flex;
     align-items: center;
-    padding-top: 8px;  /* Agregar esta línea */
+    padding-top: 8px;
 }
 
 .logo-image {
@@ -103,7 +121,7 @@ body {
 
 .search-wrapper {
     width: 100%;
-    max-width: 750px;
+    max-width: 800px;
 }
 
 .input-group {
@@ -144,7 +162,7 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 25px;  /* Reducido de 24px a 15px para acercar los elementos */
+    gap: 15px;
 }
 
 .account-button {
@@ -153,26 +171,19 @@ body {
     background: none;
     border: none;
     cursor: pointer;
-    gap: 5px;  /* Reducido de 8px a 5px para acercar el ícono al texto */
+    gap: 5px;
 }
 
 .account-button img,
 .wishlist-link img,
 .cart-button img {
-    width: 27px;  /* Reducido de 24px a 20px */
-    height: 27px;  /* Reducido de 24px a 20px */
+    width: 20px;
+    height: 20px;
 }
 
 .account-label {
-    font-size: 13px;  /* Ajustado el tamaño de la fuente */
-    font-weight: bold;
-    color: #000000;  /* Cambiado a negro como en la imagen */
-}
-
-.wishlist-link img,
-.cart-button img {
-    width: 24px;
-    height: 24px;
+    font-size: 13px;
+    color: #000000;
 }
 
 .cart-button {
@@ -339,32 +350,115 @@ body {
 
 /* Media queries para móviles */
 @media (max-width: 767px) {
-    .flex-row-content,
-    .header-container,
-    .nav-container {
+    /* Mostrar botón hamburguesa */
+    .hamburger-menu {
+        display: block;
+        order: 1;
+        margin-right: 15px;
+    }
+
+    /* Ocultar menú de navegación */
+    .main-nav {
+        display: none;
+    }
+
+    /* Reorganizar header */
+    .header-container {
+        height: auto;
+        padding: 15px 20px;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    /* Logo más pequeño */
+    .logo-container {
+        width: auto;
+        order: 2;
+        flex: 1;
+    }
+
+    .logo-image {
+        width: 150px;
+    }
+
+    /* Acciones de usuario al lado del logo */
+    .user-actions {
+        width: auto;
+        order: 3;
+        gap: 15px;
+        padding-right: 10px;
+    }
+
+    /* Buscador debajo */
+    .search-container {
+        order: 4;
+        width: 100%;
+        padding: 0;
+        margin-top: 10px;
+    }
+
+    .search-wrapper {
+        max-width: 100%;
+    }
+
+    /* Ocultar texto "Mi cuenta" */
+    .account-label {
+        display: none;
+    }
+
+    /* Ajustar tamaños de iconos */
+    .account-button img,
+    .wishlist-link img,
+    .cart-button img {
+        width: 22px;
+        height: 22px;
+    }
+
+    /* Ajustar padding del contenido principal */
+    .flex-row-content {
         padding: 0 20px;
+    }
+
+    /* Banners y promos */
+    .bank-promos,
+    .main-banner {
+        margin-top: 0;
     }
 
     .logo-container,
     .user-actions {
         width: auto;
     }
+}
+@media (max-width: 767px) {
+    .promos-container picture {
+        display: block;
+        width: 100%;
+    }
+    
+    .promos-container img,
+    .promos-container source {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+}
+.promo-mobile {
+    display: none;
+}
 
-    .account-label {
+.promo-desktop {
+    display: block;
+    width: 100%;
+}
+
+/* Media query para mobile */
+@media (max-width: 767px) {
+    .promo-mobile {
+        display: block;
+        width: 100%;
+    }
+    .promo-desktop {
         display: none;
-    }
-
-    .menu-list {
-        padding: 10px;
-        gap: 20px;
-        flex-wrap: wrap;
-    }
-
-    .search-container {
-        padding: 0 10px;
-    }
-
-    .user-actions {
-        gap: 15px;
     }
 }
