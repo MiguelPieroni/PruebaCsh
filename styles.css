@@ -144,7 +144,7 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 24px;
+    gap: 25px;  /* Reducido de 24px a 15px para acercar los elementos */
 }
 
 .account-button {
@@ -153,17 +153,20 @@ body {
     background: none;
     border: none;
     cursor: pointer;
-    gap: 8px;
+    gap: 5px;  /* Reducido de 8px a 5px para acercar el ícono al texto */
 }
 
-.account-button img {
-    width: 24px;
-    height: 24px;
+.account-button img,
+.wishlist-link img,
+.cart-button img {
+    width: 27px;  /* Reducido de 24px a 20px */
+    height: 27px;  /* Reducido de 24px a 20px */
 }
 
 .account-label {
-    font-size: 14px;
-    color: #333;
+    font-size: 13px;  /* Ajustado el tamaño de la fuente */
+    font-weight: bold;
+    color: #000000;  /* Cambiado a negro como en la imagen */
 }
 
 .wishlist-link img,
